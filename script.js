@@ -10,14 +10,13 @@ $(document).ready(function(){
       console.log("blue jays")
       } else if(value.linescore != undefined) {
         $('.day').append(value.original_date)
-        $('.home').append('<li class="hometeam">' + value.home_team_name + '<li>')
-        $('.away').append('<li class="awayteam">' + value.away_team_name + '<li>')
-        $('.status').append('<li class="statusteam">' + value.status.status + '<li>')
-        $('.score').append('<li class="scoreteam">' + value.linescore.r.home + value.linescore.r.away + '<li>')
+        $('.day').append('<li class="team">' + value.home_team_name + ' vs ' + value.away_team_name + '</li>')
+        $('.day').append('<li class="status">' + value.status.status + '</li>')
+        $('.day').append('<li class="score">' + value.linescore.r.home + '-' + value.linescore.r.away + '</li>')
       } else {
-        $('.home').append('<li class="hometeam">' + value.home_team_name + '<li>')
-        $('.away').append('<li class="awayteam">' + value.away_team_name + '<li>')
-        $('.status').append('<li class="statusteam">' + value.status.status + '<li>')
+        $('.day').append(value.original_date)
+        $('.day').append('<li class="team">' + value.home_team_name + ' vs ' + value.away_team_name  + '</li>')
+        $('.day').append('<li class="status">' + value.status.status  + '</li>')
       }
     })
   })
