@@ -9,6 +9,7 @@ $(document).ready(function(){
       if (value.home_team_name == 'Blue Jays' || value.away_team_name == "Blue Jays"){
       console.log("blue jays")
       } else if(value.linescore != undefined) {
+        $('.day').append(value.original_date)
         $('.home').append('<li class="hometeam">' + value.home_team_name + '<li>')
         $('.away').append('<li class="awayteam">' + value.away_team_name + '<li>')
         $('.status').append('<li class="statusteam">' + value.status.status + '<li>')
