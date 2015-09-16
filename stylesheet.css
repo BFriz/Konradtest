@@ -1,0 +1,24 @@
+.day{
+  border-radius: blue;
+  border-radius: 20px;
+}
+#input{
+  font-size: 25px;
+  background-color:#fff;
+  border: 1px solid grey;
+}
+#submit{
+  top: 50%;
+  left: 50%;
+  transform translate: (-50%, -50%);
+  background: #691840;
+  border: 0;
+  line-height: 40px;
+  padding: 0px 40px;
+  border-radius: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #fff;
+}
