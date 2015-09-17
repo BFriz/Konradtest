@@ -8,12 +8,12 @@ $(document).ready(function(){
     }).done(function(response){
       var data = response.data.games.game
       var box = $('#box');
-       box.append('<span class="day box box100">' + data[0].original_date + '</span>' );
+       // box.append('<span class="day box box100">' + data[0].original_date + '</span>' );
       $.each(data,processEachDataItem);
       function processEachDataItem(index, value ) {
        
         var box = $('#box');
-        if (value.home_team_name || value.away_team_name == "Blue Jays")
+
         addContentToTheUL(value,box);
 
         function addContentToTheUL(value, box){
@@ -24,7 +24,12 @@ $(document).ready(function(){
           str.push( '<li class="score info">' + value.linescore.r.home + '-' + value.linescore.r.away + '</li>')
           }
           str.push('</ul>' );
-              box.append( str.join(''));
+          if ((value.home_team_name || value.away_team_name) == "Blue Jays"){
+            box.prepend( str.join(''));
+          } else{
+            box.append( str.join(''));
+          }
+            
             }
           }
     })
