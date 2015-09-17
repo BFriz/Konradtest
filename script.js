@@ -32,16 +32,16 @@ $(document).ready(function(){
           function addContentToTheUL(value, box){
             var str = Array(); 
             str.push('<ul class="box box20">' );
-            str.push('<li class="team">' + "Home: " + value.home_team_name + ' vs ' + "Away: " + value.away_team_name + '</li>' + '<li class="status">' + value.status.status + '</li>' );
+            str.push('<li class="hTeam box box40">' + "Home: " + value.home_team_name + '</li>' + '<li class="aTeam box box40">' + 'vs ' + "Away: " + value.away_team_name + '</li>' + '<li class="status box box40">' + value.status.status + '</li>' );
             if (value.linescore != undefined){
-            str.push( '<li class="score info">' + value.linescore.r.home + '-' + value.linescore.r.away + '</li>');
+            str.push( '<li class="score info box box40">' + value.linescore.r.home + '-' + value.linescore.r.away + '</li>');
             };
             str.push('</ul>' );
             if ((value.home_team_name || value.away_team_name) == "Blue Jays"){
               box.prepend( str.join(''));
             } else{
               box.append( str.join(''));
-            };        
+            }           
           };
         };
     });
@@ -50,9 +50,6 @@ $(document).ready(function(){
   $("#submit").click(function(event, url) {
      event.preventDefault();
     date = $("#input").val().split('-')
-     // if (date.join("") == "20141029") {
-     //  worldSeries();
-     // } else {
       var year = date[0]
       var month = date[1]
       var day = date[2]
@@ -60,12 +57,10 @@ $(document).ready(function(){
     $("#box").empty()
       apiCall(url, date)
   });
-    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_07/day_14/master_scoreboard.json'
+    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_06/day_01/master_scoreboard.json'
     apiCall(url);
 
-    function worldSeries(){
-      debugger;
-    }
+   
     $(".one").click(function(event, url) {
      event.preventDefault();
     var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_10/day_29/master_scoreboard.json'
@@ -86,11 +81,12 @@ $(document).ready(function(){
    })
     $(".four").click(function(event, url) {
      event.preventDefault();
-    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_07/day_15/master_scoreboard.json'
+    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_07/day_14/master_scoreboard.json'
     $("#box").empty()
     
     apiCall(url);
    })
+    
 })
 
 

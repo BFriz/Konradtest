@@ -29,7 +29,8 @@
 
 .box40{
   width:40%;
-  
+  padding: 0px;
+  margin-right: -22px;
 }
 
 .box50{
