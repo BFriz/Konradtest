@@ -7,38 +7,26 @@ $(document).ready(function(){
       url: url
     }).done(function(response){
       var data = response.data.games.game
-      checkTeams(data);
       var box = $('#box');
        box.append('<span class="day">' + data[0].original_date + '</span>' );
-      $.each(data,processEachDataItem);
+      $.each(data);
       function processEachDataItem(index, value ) {
-       
-          var box = $('#box');
-          if (value.home_team_name || value.away_team_name == "Blue Jays")
-          addContentToTheUL(value,box);
+        var box = $('#box');
+        addContentToTheUL(value,box);
 
         function addContentToTheUL(value, box){
-
-var str = Array(); 
-
-str.push('<ul>' );
-
-str.push('<li class="team">' + value.home_team_name + ' vs ' + value.away_team_name + '</li>' + '<li class="status">' + value.status.status + '</li>' )
-if (value.linescore != undefined){
-
-str.push( '<li class="score info">' + value.linescore.r.home + '-' + value.linescore.r.away + '</li>')
-}
-str.push('</ul>' );
-
-          box.append( str.join(''));
-  var myobj = {}; 
-myobj.doAthing = function(){}
+        var str = Array(); 
+          str.push('<ul>' );
+          str.push('<li class="team">' + value.home_team_name + ' vs ' + value.away_team_name + '</li>' + '<li class="status">' + value.status.status + '</li>' )
+        if (value.linescore != undefined){
+          str.push( '<li class="score info">' + value.linescore.r.home + '-' + value.linescore.r.away + '</li>')
+        }
+          str.push('</ul>' );
+          debugger;
+        box.append( str.join(''));
         }
       }
     })
-  }
-  function checkTeams(data){
-    debugger;
   }
 
 
