@@ -31,3 +31,31 @@ ul
 {
 list-style-type: none;
 }
+
+.button{
+  top: 30%;
+  left: 30%;
+  transform translate: (-50%, -50%);
+  background: #691840;
+  border: 0;
+  border-radius: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 150;
+  font-size: 20px;
+  color: #fff;
+}
+
+header {
+  font-size: 80px;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+#noGame{
+  text-align: center;
+  font-size: 40px;
+  padding-top: 3%;
+}

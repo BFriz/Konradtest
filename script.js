@@ -8,7 +8,10 @@ $(document).ready(function(){
     }).done(function(response){
       var data = response.data.games.game
       var box = $('#box');
-      if (data.length == undefined) {
+      $('#noGame').empty();
+      if (data == undefined) {
+        $('#noGame').append("No Games Today")
+      } else if (data.length == undefined) {
         oneGame(data)
       } else {
       $.each(data,processEachDataItem);
@@ -56,15 +59,38 @@ $(document).ready(function(){
       var url = 'http://gd2.mlb.com/components/game/mlb/year_' + year + '/month_' + month + '/day_' + day + '/master_scoreboard.json'
     $("#box").empty()
       apiCall(url, date)
-    // }
   });
-    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_03/day_29/master_scoreboard.json'
+    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_07/day_14/master_scoreboard.json'
     apiCall(url);
 
     function worldSeries(){
       debugger;
     }
-
+    $(".one").click(function(event, url) {
+     event.preventDefault();
+    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_10/day_29/master_scoreboard.json'
+    $("#box").empty()
+    apiCall(url);
+   })
+    $(".two").click(function(event, url) {
+     event.preventDefault();
+    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_03/day_29/master_scoreboard.json'
+    $("#box").empty()
+    apiCall(url);
+   })
+    $(".three").click(function(event, url) {
+     event.preventDefault();
+    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_07/day_15/master_scoreboard.json'
+    $("#box").empty()
+    apiCall(url);
+   })
+    $(".four").click(function(event, url) {
+     event.preventDefault();
+    var url = 'http://gd2.mlb.com/components/game/mlb/year_2014/month_07/day_15/master_scoreboard.json'
+    $("#box").empty()
+    
+    apiCall(url);
+   })
 })
 
 

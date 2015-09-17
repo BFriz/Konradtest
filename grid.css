@@ -11,10 +11,16 @@
 }
 
 .box20{
-  width:18%;
+  width: 19%;
   border: 1px solid #d0d0d0;
-  margin: 12px;
+  margin: 4px;
+  height: 40px;
   /*text-align: center;*/
+}
+.box25{
+  width: 25%;
+  border: 1px solid #d0d0d0;
+
 }
 
 .box30{
