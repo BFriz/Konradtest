@@ -1,0 +1,60 @@
+.box{
+  vertical-align: top;
+  display: inline-block;
+  padding:2%;
+  margin-right: -4px;
+
+}
+
+.box10{
+  width:10%;
+}
+
+.box20{
+  width:18%;
+  border: 1px solid #d0d0d0;
+  margin: 12px;
+}
+.box20:hover{
+-webkit-animation: pulse 2s;
+    animation: pulse 2s;
+}
+
+.box30{
+  width:30%;  
+}
+
+.box40{
+  width:40%;
+  
+}
+
+.box50{
+  width:50%;
+  
+}
+
+.box60{
+  width:60%;
+  
+}
+
+.box70{
+  width:70%;
+  
+}
+
+.box80{
+  width:80%;
+  
+}
+
+.box90{
+  width:90%;
+  
+}
+
+.box100{
+  width:100%;
+  
+}

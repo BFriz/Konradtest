@@ -8,43 +8,39 @@ $(document).ready(function(){
     }).done(function(response){
       var data = response.data.games.game
       var box = $('#box');
-       box.append('<span class="day">' + data[0].original_date + '</span>' );
-      $.each(data);
+       box.append('<span class="day box box100">' + data[0].original_date + '</span>' );
+      $.each(data,processEachDataItem);
       function processEachDataItem(index, value ) {
+       
         var box = $('#box');
+        if (value.home_team_name || value.away_team_name == "Blue Jays")
         addContentToTheUL(value,box);
 
         function addContentToTheUL(value, box){
-        var str = Array(); 
-          str.push('<ul>' );
-          str.push('<li class="team">' + value.home_team_name + ' vs ' + value.away_team_name + '</li>' + '<li class="status">' + value.status.status + '</li>' )
-        if (value.linescore != undefined){
+          var str = Array(); 
+          str.push('<ul class="box box20">' );
+          str.push('<li class="team">' + "Home: " + value.home_team_name + ' vs ' + "Away: " + value.away_team_name + '</li>' + '<li class="status">' + value.status.status + '</li>' )
+          if (value.linescore != undefined){
           str.push( '<li class="score info">' + value.linescore.r.home + '-' + value.linescore.r.away + '</li>')
-        }
+          }
           str.push('</ul>' );
-          debugger;
-        box.append( str.join(''));
-        }
-      }
+              box.append( str.join(''));
+            }
+          }
     })
   }
-
-
 
   $("#submit").click(function(event, url) {
      event.preventDefault();
     date = $("#input").val().split('-')
-    var year = date[0]
-    var month = date[1]
-    var day = date[2]
-    var url = 'http://gd2.mlb.com/components/game/mlb/year_' + year + '/month_' + month + '/day_' + day + '/master_scoreboard.json'
+      var year = date[0]
+      var month = date[1]
+      var day = date[2]
+      var url = 'http://gd2.mlb.com/components/game/mlb/year_' + year + '/month_' + month + '/day_' + day + '/master_scoreboard.json'
     $("#box").empty()
-    apiCall(url)
+      apiCall(url)
   });
     apiCall();
-
-
-
 })
 
 
