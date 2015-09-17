@@ -14,10 +14,7 @@
   width:18%;
   border: 1px solid #d0d0d0;
   margin: 12px;
-}
-.box20:hover{
--webkit-animation: pulse 2s;
-    animation: pulse 2s;
+  /*text-align: center;*/
 }
 
 .box30{

@@ -22,3 +22,12 @@
   font-size: 12px;
   color: #fff;
 }
+
+li{
+  text-align: center;
+}
+
+ul
+{
+list-style-type: none;
+}
